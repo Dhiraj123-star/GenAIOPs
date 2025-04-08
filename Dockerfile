@@ -1,5 +1,5 @@
 # ------------ Stage 1: Builder ------------
-    FROM python:3.13.0a6-alpine AS builder
+    FROM python:3.12-alpine AS builder
 
     ENV PYTHONDONTWRITEBYTECODE=1
     ENV PYTHONUNBUFFERED=1
@@ -23,7 +23,7 @@
      && pip wheel --no-cache-dir --wheel-dir=/wheels -r requirements.txt
     
     # ------------ Stage 2: Final Minimal Image ------------
-    FROM python:3.13.0a6-alpine
+    FROM python:3.12-alpine
     
     ENV PYTHONDONTWRITEBYTECODE=1
     ENV PYTHONUNBUFFERED=1
